@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import defaultAvatar from "../../image/defaultAvatar.png";
+import defaultAvatar from "../../assets/images/defaultAvatar.png";
 import { makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Divider from "@mui/material/Divider";

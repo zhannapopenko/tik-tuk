@@ -4,8 +4,7 @@ import Profile from "./pages/Profile";
 import CssBaseline from "@mui/material/CssBaseline";
 import {
   ThemeProvider,
-  createTheme,
-  makeStyles,
+  createTheme
 } from "@material-ui/core/styles";
 
 const theme = createTheme();

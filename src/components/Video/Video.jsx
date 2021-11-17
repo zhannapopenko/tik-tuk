@@ -49,25 +49,27 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
     },
   },
+  cardVideoContainer: {
+    display: "flex",
+    width: "fit-content"
+  },
   cardMedia: {
-    width: "100%",
     height: "28rem",
     display: "flex",
     flex: 3,
     margin: "0.5rem",
+    borderRadius: "15px",
     [theme.breakpoints.down("md")]: {
       height: "27rem",
     },
     [theme.breakpoints.down("sm")]: {
-      width: "23rem",
+      width: "23rem", 
     },
   },
   sidebarContainer: {
     display: "flex",
     flex: 1,
     width: "100%",
-   
-    
   },
 }));
 
@@ -109,18 +111,20 @@ const Video = ({
             />
           </Box>
           <Box className={classes.cardMediaContainer}>
-            <CardMedia
-              className={classes.cardMedia}
-              component="video"
-              loop
-              autoplay="autoplay"
-              muted
-              controls
-              preload="auto"
-              onClick={onVideoPress}
-              ref={videoRef}
-              src={url}
-            />
+            <Box className={classes.cardVideoContainer}>
+              <CardMedia
+                className={classes.cardMedia}
+                component="video"
+                loop
+                autoplay="autoplay"
+                muted
+                controls
+                preload="auto"
+                onClick={onVideoPress}
+                ref={videoRef}
+                src={url}
+              />
+            </Box>
             <Box className={classes.sidebarContainer}>
               <VideoSidebar likes={likes} comments={comments} />
             </Box>

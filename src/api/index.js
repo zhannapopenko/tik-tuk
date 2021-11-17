@@ -1,4 +1,4 @@
-import axios from "../lib/axios-common";
+import axios from "../services/axios";
 
 export function getTrendingFeed() {
   return axios.get("/trending/feed");

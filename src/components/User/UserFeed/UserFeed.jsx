@@ -1,39 +1,12 @@
 import React, { useRef, useState } from "react";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 
-const useStyles = makeStyles(() => ({
-  mainBox: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  card: {
-    display: "flex",
-    flexFlow: "column",
-    justifyItems: "flex-start",
-    padding: "0 7%",
-  },
-  cardContent: {
-    display: "flex",
-    flexFlow: "row",
-    justifyItems: "flex-start",
-    alignItems: "center",
-    borderBottom: "1px solid black",
-  },
-  cardMedia: {
-    display: "flex",
-    justifyItems: "center",
-    alignItems: "center",
-    width: "23rem",
-    height: "30rem",
-    margin: "2% 0",
-  },
-}));
+import { userFeedStyles } from './UserFeed.styles';
 
 const UserFeed = ({ feed }) => {
-  const classes = useStyles();
+  const classes = userFeedStyles();
   const [videoPlaying, setVideoPlaying] = useState(false);
   const videoRef = useRef(null);
 
@@ -46,7 +19,11 @@ const UserFeed = ({ feed }) => {
       setVideoPlaying(true);
     }
   };
-  
+
+  if (!feed) {
+    return <div></div>
+  }
+
   if (feed) {
     return (
       <Box className={classes.mainBox}>
@@ -67,8 +44,6 @@ const UserFeed = ({ feed }) => {
         </Card>
       </Box>
     );
-  } else {
-    return <div></div>
   }
 };
 

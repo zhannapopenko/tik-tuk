@@ -1,5 +1,5 @@
 import React from "react";
-import defaultAvatar from "../../image/defaultAvatar.png";
+import defaultAvatar from "../../assets/images/defaultAvatar.png";
 import { Card, CardContent, Divider } from "@mui/material";
 import { Box } from "@mui/system";
 import { Typography, Avatar } from "@mui/material";
