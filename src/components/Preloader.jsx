@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import React from "react";
-import Spinner from "../preloaderGif/Spinner.gif";
+import Spinner from "../assets/images/spinner.gif";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles(() => ({
@@ -8,7 +8,8 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    margin: "20rem",
+    width: "100%",
+    height: "100vh"
   },
 }));
 
