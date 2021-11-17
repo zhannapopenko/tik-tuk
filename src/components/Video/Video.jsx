@@ -4,22 +4,31 @@ import VideoHeader from "./VideoHeader";
 import VideoSidebar from "./VideoSidebar";
 import { Card, CardContent, CardMedia } from "@mui/material";
 import { Box } from "@mui/system";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles(() => ({
-  mainBox: {
+const useStyles = makeStyles((theme) => ({
+  videoContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     margin: "1rem auto",
+    [theme.breakpoints.down("sm")]: {
+      margin: "3%",
+    },
   },
   cardContent: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    width: "30rem",
-    minHeight: "38rem",
+    width: "32rem",
+    minHeight: "34rem",
+    [theme.breakpoints.down("md")]: {
+      width: "27rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "23rem",
+    },
   },
   headerContainer: {
     width: "100%",
@@ -29,6 +38,16 @@ const useStyles = makeStyles(() => ({
     alignItems: "end",
     justifyContent: "space-around",
     width: "25rem",
+    [theme.breakpoints.down("md")]: {
+      width: "23rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "20rem",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+    },
   },
   cardMedia: {
     width: "100%",
@@ -36,18 +55,36 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     flex: 3,
     margin: "0.5rem",
+    [theme.breakpoints.down("md")]: {
+      height: "27rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "23rem",
+    },
   },
   sidebarContainer: {
     display: "flex",
     flex: 1,
+    width: "100%",
+   
+    
   },
 }));
 
-const Video = ({ url, channel, avatar, description, likes, comments }) => {
+const Video = ({
+  url,
+  nickName,
+  avatar,
+  authorUsername,
+  description,
+  hashtags,
+  likes,
+  comments,
+}) => {
   const classes = useStyles();
   const [videoPlaying, setVideoPlaying] = useState(false);
   const videoRef = useRef(null);
-  
+
   const onVideoPress = () => {
     if (videoPlaying) {
       videoRef.current.pause();
@@ -59,14 +96,16 @@ const Video = ({ url, channel, avatar, description, likes, comments }) => {
   };
 
   return (
-    <Box className={classes.mainBox}>
+    <Box className={classes.videoContainer}>
       <Card>
         <CardContent className={classes.cardContent}>
           <Box className={classes.headerContainer}>
             <VideoHeader
+              username={authorUsername}
               avatar={avatar}
-              channel={channel}
+              nickName={nickName}
               description={description}
+              hashtags={hashtags}
             />
           </Box>
           <Box className={classes.cardMediaContainer}>
@@ -74,6 +113,9 @@ const Video = ({ url, channel, avatar, description, likes, comments }) => {
               className={classes.cardMedia}
               component="video"
               loop
+              autoplay="autoplay"
+              muted
+              controls
               preload="auto"
               onClick={onVideoPress}
               ref={videoRef}

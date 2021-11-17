@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { getTrendingFeed } from "../apis/api";
 import Preloader from "../components/Preloader";
-import Video from "../components/Video";
+import Video from "../components/Video/Video";
 
 const News = () => {
   const [error, setError] = useState(null);
@@ -12,12 +12,12 @@ const News = () => {
   useEffect(() => {
     getTrendingFeed().then(
       (result) => {
-        setIsLoaded(true);
         setVideos(result.data);
+        setIsLoaded(true);
       },
       (error) => {
-        setIsLoaded(true);
         setError(error);
+        setIsLoaded(true);
       }
     );
   }, []);
@@ -31,12 +31,15 @@ const News = () => {
       <div>
         {videos.map((video) => (
           <Video
+            key={video.videoUrl}
             url={video.videoUrl}
-            channel={video.authorMeta?.nickName}
+            authorUsername={video.authorMeta?.name}
+            nickName={video.authorMeta?.nickName}
             avatar={video.authorMeta?.avatar}
             likes={video.diggCount}
             comments={video.commentCount}
             description={video.text}
+            hashtags={video.hashtags}
           />
         ))}
       </div>
