@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { getTrendingFeed } from "../api";
+import Video from "../components/VideoContent/Video";
 import Preloader from "../components/Preloader";
-import Video from "../components/Video/Video";
+import { Box } from "@mui/system";
 
 const News = () => {
   const [error, setError] = useState(null);
@@ -15,19 +16,31 @@ const News = () => {
         const res = await getTrendingFeed();
         setVideos(res.data);
         setIsLoaded(true);
-      } catch(error) {
+      } catch (error) {
         setError(error);
         setIsLoaded(true);
-      }   
-    }
+      }
+    };
 
     fetchData();
   }, []);
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <Box
+        sx={{
+          marginTop: "2rem",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "50px",
+        }}
+      >
+        Error: {error.message}
+      </Box>
+    );
   } else if (!isLoaded) {
-    return <Preloader/>
+    return <Preloader />;
   }
 
   return (
@@ -41,6 +54,7 @@ const News = () => {
           avatar={video.authorMeta?.avatar}
           likes={video.diggCount}
           comments={video.commentCount}
+          shareCount={video.shareCount}
           description={video.text}
           hashtags={video.hashtags}
         />

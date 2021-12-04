@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import { getUserInfo, getUserFeed } from "../api";
 import Preloader from "../components/Preloader";
-import { useParams } from "react-router";
 import UserInfo from "../components/User/UserInfo";
 import UserFeed from "../components/User/UserFeed";
 import { Container, Grid, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
 const Profile = () => {
   const { username } = useParams();
@@ -26,20 +27,32 @@ const Profile = () => {
       }
 
       try {
-        const res = await getUserFeed(username);
+        const res = await getUserFeed();
         setFeed(res.data);
         setIsLoaded(true);
       } catch (error) {
         setError(error);
         setIsLoaded(true);
       }
-    }
+    };
 
     fetchData();
   }, []);
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <Box
+        sx={{
+          marginTop: "2rem",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "50px",
+        }}
+      >
+        Error: {error.message}
+      </Box>
+    );
   } else if (!isLoaded) {
     return <Preloader />;
   }
@@ -60,7 +73,7 @@ const Profile = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              marginTop: "4rem",
+              marginTop: "3rem",
             }}
           >
             <Typography variant="h6">

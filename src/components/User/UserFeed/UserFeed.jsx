@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { userFeedStyles } from "./UserFeed.styles";
+import numberFormatting from "../../../numberFormatting";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-
-import { userFeedStyles } from './UserFeed.styles';
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const UserFeed = ({ feed }) => {
   const classes = userFeedStyles();
@@ -21,7 +21,7 @@ const UserFeed = ({ feed }) => {
   };
 
   if (!feed) {
-    return <div></div>
+    return <div></div>;
   }
 
   if (feed) {
@@ -30,16 +30,19 @@ const UserFeed = ({ feed }) => {
         <Card className={classes.card}>
           <CardContent className={classes.cardContent}>
             <PlayArrowIcon />
-            <Typography variant="subtitle1">{feed.stats.playCount}</Typography>
+            <Typography variant="subtitle1">{numberFormatting(feed.playCount)}</Typography>
           </CardContent>
           <CardMedia
             className={classes.cardMedia}
             component="video"
+            autoplay="autoplay"
+            muted
+            controls
             loop
             preload="auto"
             onClick={onVideoPress}
             ref={videoRef}
-            src={feed.originCover}
+            src={feed.videoUrl}
           />
         </Card>
       </Box>
