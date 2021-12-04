@@ -1,20 +1,17 @@
 import { BrowserRouter } from "react-router-dom";
-import CssBaseline from "@mui/material/CssBaseline";
-import {
-  ThemeProvider,
-  createTheme
-} from "@material-ui/core/styles";
 import Layout from "./layout/Layout";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 
 const theme = createTheme();
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-       <BrowserRouter>
+      <BrowserRouter>
         <CssBaseline />
         <Layout />
-        </BrowserRouter>
+      </BrowserRouter>
     </ThemeProvider>
   );
 };

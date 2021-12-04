@@ -1,29 +1,32 @@
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@material-ui/core";
 
-export const userFeedStyles = makeStyles(() => ({
-    mainBox: {
-      display: "flex",
-      justifyContent: "center",
+export const userFeedStyles = makeStyles((theme) => ({
+  mainBox: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  card: {
+    display: "flex",
+    flexFlow: "column",
+    justifyContent: "center",
+    padding: "0.5rem 5%",
+  },
+  cardContent: {
+    display: "flex",
+    flexFlow: "row",
+    alignItems: "center",
+  },
+  cardMedia: {
+    display: "flex",
+    justifyItems: "center",
+    alignItems: "center",
+    width: "25rem",
+    height: "30rem",
+    [theme.breakpoints.down("md")]:{
+      height: "25rem",
     },
-    card: {
-      display: "flex",
-      flexFlow: "column",
-      justifyItems: "flex-start",
-      padding: "0 7%",
-    },
-    cardContent: {
-      display: "flex",
-      flexFlow: "row",
-      justifyItems: "flex-start",
-      alignItems: "center",
-      borderBottom: "1px solid black",
-    },
-    cardMedia: {
-      display: "flex",
-      justifyItems: "center",
-      alignItems: "center",
-      width: "23rem",
-      height: "30rem",
-      margin: "2% 0",
-    },
-  }));
+    [theme.breakpoints.down("xs")]:{
+      height: "22rem",
+},
+  },
+}));

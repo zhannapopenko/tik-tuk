@@ -8,6 +8,6 @@ export function getUserInfo(username) {
   return axios.get(`/user/info/${username}`);
 }
 
-export function getUserFeed(username) {
-  return axios.get(`/user/feed/${username}`);
+export function getUserFeed() {
+  return axios.get("/trending/feed");
 }
