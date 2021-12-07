@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tik-tuk/ss/static/css/main.c03784c9.chunk.css",
+    "main.js": "/tik-tuk/ss/static/js/main.c278a20d.chunk.js",
+    "main.js.map": "/tik-tuk/ss/static/js/main.c278a20d.chunk.js.map",
+    "runtime-main.js": "/tik-tuk/ss/static/js/runtime-main.35f8c869.js",
+    "runtime-main.js.map": "/tik-tuk/ss/static/js/runtime-main.35f8c869.js.map",
+    "static/js/2.ee60feb0.chunk.js": "/tik-tuk/ss/static/js/2.ee60feb0.chunk.js",
+    "static/js/2.ee60feb0.chunk.js.map": "/tik-tuk/ss/static/js/2.ee60feb0.chunk.js.map",
+    "index.html": "/tik-tuk/ss/index.html",
+    "static/css/main.c03784c9.chunk.css.map": "/tik-tuk/ss/static/css/main.c03784c9.chunk.css.map",
+    "static/js/2.ee60feb0.chunk.js.LICENSE.txt": "/tik-tuk/ss/static/js/2.ee60feb0.chunk.js.LICENSE.txt",
+    "static/media/defaultAvatar.724b79cd.png": "/tik-tuk/ss/static/media/defaultAvatar.724b79cd.png",
+    "static/media/spinner.40810cf3.gif": "/tik-tuk/ss/static/media/spinner.40810cf3.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.35f8c869.js",
+    "static/js/2.ee60feb0.chunk.js",
+    "static/css/main.c03784c9.chunk.css",
+    "static/js/main.c278a20d.chunk.js"
+  ]
+}
