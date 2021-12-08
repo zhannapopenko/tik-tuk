@@ -1,4 +1,7 @@
 # tik-tuk
+
+[Demo](https://zhannapopenko.github.io/tik-tuk/)
+
 ## TikTok clone, test task for Genesis
 
 # This repository is about how to create a TikTok clone. 
