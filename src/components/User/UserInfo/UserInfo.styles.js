@@ -36,7 +36,7 @@ export const userInfoStyles = makeStyles((theme) => ({
       marginLeft: "0.5rem",
     },
   },
-  nickname: {
+  userName: {
     marginBottom: "0.5rem",
     fontSize: "30px",
     [theme.breakpoints.down("sm")]: {
@@ -45,7 +45,7 @@ export const userInfoStyles = makeStyles((theme) => ({
       marginLeft: "0.5rem",
     },
   },
-  name: {
+  nickname: {
     fontSize: "18px",
   },
   signature: {

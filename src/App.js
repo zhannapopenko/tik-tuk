@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
-import Layout from "./layout/Layout";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@material-ui/core/styles";
+import Layout from "./layout/Layout.jsx";
 
 const theme = createTheme();
 

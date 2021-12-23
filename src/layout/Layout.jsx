@@ -1,16 +1,15 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
-import News from "../pages/News";
-import Profile from "../pages/Profile";
-import Content from "./Content";
-import Header from "./Header";
+import VideosFeed from "../pages/VideosFeed.jsx";
+import Profile from "../pages/Profile.jsx";
+import Content from "./Content.jsx";
+import Header from "./Header.jsx";
 
 const Layout = () => (
   <>
     <Header />
     <Content>
       <Routes>
-        <Route path="/" element={<News />} />
+        <Route path="/" element={<VideosFeed />} />
         <Route path="profile/:username" element={<Profile />} />
       </Routes>
     </Content>

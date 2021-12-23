@@ -1,6 +1,5 @@
-import React from "react";
-import Spinner from "../assets/images/spinner.gif";
 import { Box } from "@mui/system";
+import Spinner from "../assets/images/spinner.gif";
 
 const Preloader = () => {
   return (

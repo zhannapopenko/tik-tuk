@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
-import { userFeedStyles } from "./UserFeed.styles";
-import numberFormatting from "../../../numberFormatting";
+import { useRef, useState } from "react";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { userFeedStyles } from "./UserFeed.styles";
+import numberFormatting from "../../../numberFormatting";
 
 const UserFeed = ({ feed }) => {
   const classes = userFeedStyles();
@@ -20,17 +20,15 @@ const UserFeed = ({ feed }) => {
     }
   };
 
-  if (!feed) {
-    return <div></div>;
-  }
-
   if (feed) {
     return (
       <Box className={classes.mainBox}>
         <Card className={classes.card}>
           <CardContent className={classes.cardContent}>
             <PlayArrowIcon />
-            <Typography variant="subtitle1">{numberFormatting(feed.playCount)}</Typography>
+            <Typography variant="subtitle1">
+              {numberFormatting(feed.playCount)}
+            </Typography>
           </CardContent>
           <CardMedia
             className={classes.cardMedia}
@@ -47,6 +45,8 @@ const UserFeed = ({ feed }) => {
         </Card>
       </Box>
     );
+  } else {
+    return <div></div>;
   }
 };
 

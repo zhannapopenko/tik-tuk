@@ -3,10 +3,10 @@ import { makeStyles } from "@material-ui/core";
 export const videoHeaderStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
+    color: "black",
     "&:hover": {
       color: "grey",
     },
-    color: "black",
   },
   box: {
     display: "flex",

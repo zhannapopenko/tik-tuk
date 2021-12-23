@@ -22,11 +22,11 @@ export const userFeedStyles = makeStyles((theme) => ({
     alignItems: "center",
     width: "25rem",
     height: "30rem",
-    [theme.breakpoints.down("md")]:{
+    [theme.breakpoints.down("md")]: {
       height: "25rem",
     },
-    [theme.breakpoints.down("xs")]:{
+    [theme.breakpoints.down("xs")]: {
       height: "22rem",
-},
+    },
   },
 }));

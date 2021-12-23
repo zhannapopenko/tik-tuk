@@ -1,11 +1,15 @@
-import React from "react";
 import { userInfoStyles } from "./UserInfo.styles";
 import numberFormatting from "../../../numberFormatting";
 import defaultAvatar from "../../../assets/images/defaultAvatar.png";
-import { Card, CardContent, Divider } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Divider,
+  Typography,
+  Avatar,
+  Container,
+} from "@mui/material";
 import { Box } from "@mui/system";
-import { Typography, Avatar } from "@mui/material";
-import { Container } from "@mui/material";
 import { Grid } from "@material-ui/core";
 import PeopleSharpIcon from "@mui/icons-material/PeopleSharp";
 import VideoCameraFrontIcon from "@mui/icons-material/VideoCameraFront";
@@ -26,16 +30,15 @@ const UserInfo = ({ info, stats }) => {
                 alt="avatar"
               />
               <Box className={classes.names}>
-                <div className={classes.nickname}>@{info.uniqueId}</div>
-                <div className={classes.name}>{info.nickname}</div>
+                <div className={classes.userName}>@{info.uniqueId}</div>
+                <div className={classes.nickname}>{info.nickname}</div>
               </Box>
             </Box>
             <Divider />
             <Typography
               className={classes.signature}
               variant="subtitle1"
-              component="h6"
-            >
+              component="h6">
               {info.signature}
             </Typography>
           </Container>
