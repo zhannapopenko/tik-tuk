@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import defaultAvatar from "../../../assets/images/defaultAvatar.png";
 import { videoHeaderStyles } from "./VideoHeader.styles";

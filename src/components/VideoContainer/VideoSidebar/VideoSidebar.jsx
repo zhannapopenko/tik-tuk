@@ -1,4 +1,3 @@
-import React from "react";
 import numberFormatting from "../../../numberFormatting";
 import { videoSidebarStyles } from "./VideoSidebar.styles";
 import { Box } from "@mui/system";

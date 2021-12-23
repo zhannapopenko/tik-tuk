@@ -1,11 +1,10 @@
-import React from "react";
 import { useState, useEffect } from "react";
-import { getTrendingFeed } from "../api";
-import Video from "../components/VideoContent/Video";
-import Preloader from "../components/Preloader";
 import { Box } from "@mui/system";
+import { getTrendingFeed } from "../api";
+import Video from "../components/VideoContainer/Video";
+import Preloader from "../components/Preloader.jsx";
 
-const News = () => {
+const VideosFeed = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [videos, setVideos] = useState([]);
@@ -15,9 +14,9 @@ const News = () => {
       try {
         const res = await getTrendingFeed();
         setVideos(res.data);
-        setIsLoaded(true);
       } catch (error) {
         setError(error);
+      } finally {
         setIsLoaded(true);
       }
     };
@@ -34,12 +33,13 @@ const News = () => {
           justifyContent: "center",
           alignItems: "center",
           fontSize: "50px",
-        }}
-      >
+        }}>
         Error: {error.message}
       </Box>
     );
-  } else if (!isLoaded) {
+  }
+
+  if (!isLoaded) {
     return <Preloader />;
   }
 
@@ -63,4 +63,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default VideosFeed;

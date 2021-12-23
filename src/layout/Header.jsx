@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import TikTok from "../assets/images/TikTok.png";
 import { makeStyles } from "@material-ui/core";
@@ -12,10 +11,10 @@ const headerStyles = makeStyles((theme) => ({
   },
   link: {
     textDecoration: "none",
+    color: "black",
     "&:hover": {
       color: "grey",
     },
-    color: "black",
     display: "flex",
     flex: 22,
     justifyContent: "flex-start",
