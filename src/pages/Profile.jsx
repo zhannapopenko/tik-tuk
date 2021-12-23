@@ -17,11 +17,11 @@ const Profile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userFeed = await getUserFeed();
-        const userInfo = await getUserInfo(username);
+        const feed = await getUserFeed();
+        const info = await getUserInfo(username);
 
-        setFeed(userFeed.data);
-        setInfo(userInfo.data);
+        setFeed(feed.data);
+        setInfo(info.data);
       } catch (error) {
         setError(error);
       } finally {

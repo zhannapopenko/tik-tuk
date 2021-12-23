@@ -12,8 +12,8 @@ const VideosFeed = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await getTrendingFeed();
-        setVideos(res.data);
+        const feed = await getTrendingFeed();
+        setVideos(feed.data);
       } catch (error) {
         setError(error);
       } finally {
