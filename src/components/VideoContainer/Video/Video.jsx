@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
+import { Box } from "@mui/system";
+import { Card, CardContent, CardMedia } from "@mui/material";
 import VideoHeader from "../VideoHeader";
 import VideoSidebar from "../VideoSidebar";
 import { videoStyles } from "./Video.styles";
-import { Card, CardContent, CardMedia } from "@mui/material";
-import { Box } from "@mui/system";
 
 const Video = ({
   url,

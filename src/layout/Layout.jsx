@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import VideosFeed from "../pages/VideosFeed.jsx";
-import Profile from "../pages/Profile.jsx";
-import Content from "./Content.jsx";
-import Header from "./Header.jsx";
+import VideosFeed from "../pages/VideosFeed";
+import Profile from "../pages/Profile";
+import Content from "./Content";
+import Header from "./Header";
 
 const Layout = () => (
   <>

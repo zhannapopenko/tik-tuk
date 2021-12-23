@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { getUserInfo, getUserFeed } from "../api";
-import Preloader from "../components/Preloader.jsx";
-import UserInfo from "../components/User/UserInfo";
-import UserFeed from "../components/User/UserFeed";
 import { Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { getUserInfo, getUserFeed } from "../api";
+import Preloader from "../components/Preloader";
+import UserInfo from "../components/User/UserInfo";
+import UserFeed from "../components/User/UserFeed";
 
 const Profile = () => {
   const { username } = useParams();

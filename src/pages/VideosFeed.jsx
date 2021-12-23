@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Box } from "@mui/system";
 import { getTrendingFeed } from "../api";
 import Video from "../components/VideoContainer/Video";
-import Preloader from "../components/Preloader.jsx";
+import Preloader from "../components/Preloader";
 
 const VideosFeed = () => {
   const [error, setError] = useState(null);

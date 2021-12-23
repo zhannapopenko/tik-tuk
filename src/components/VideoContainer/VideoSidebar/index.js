@@ -1,1 +1,1 @@
-export { default } from "./VideoSidebar.jsx";
+export { default } from "./VideoSidebar";
