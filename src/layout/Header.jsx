@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import TikTok from "../assets/images/TikTok.png";
 import { makeStyles } from "@material-ui/core";
 import { Card, CardContent, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import TikTok from "../assets/images/TikTok.png";
 
 const headerStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -39,7 +39,7 @@ const Header = () => {
         <Box className={classes.imageContainer}>
           <img src={TikTok} alt="logo" />
         </Box>
-        <Link to={"/"} className={classes.link}>
+        <Link to="/" className={classes.link}>
           <Typography variant="h5">
             <strong>Tik Tuk</strong>
           </Typography>

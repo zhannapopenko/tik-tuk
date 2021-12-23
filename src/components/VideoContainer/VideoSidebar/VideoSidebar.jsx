@@ -1,9 +1,9 @@
-import numberFormatting from "../../../numberFormatting";
-import { videoSidebarStyles } from "./VideoSidebar.styles";
 import { Box } from "@mui/system";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CommentIcon from "@mui/icons-material/Comment";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
+import numberFormatting from "../../../numberFormatting";
+import { videoSidebarStyles } from "./VideoSidebar.styles";
 
 const VideoSidebar = ({ likes, comments, shareCount }) => {
   const classes = videoSidebarStyles();

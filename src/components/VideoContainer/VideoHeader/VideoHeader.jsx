@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import defaultAvatar from "../../../assets/images/defaultAvatar.png";
-import { videoHeaderStyles } from "./VideoHeader.styles";
 import { Avatar, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Divider from "@mui/material/Divider";
+import defaultAvatar from "../../../assets/images/defaultAvatar.png";
+import { videoHeaderStyles } from "./VideoHeader.styles";
 
 const VideoHeader = ({ username, avatar, nickName, description, hashtags }) => {
   const classes = videoHeaderStyles();

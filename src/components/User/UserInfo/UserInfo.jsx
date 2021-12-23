@@ -1,6 +1,3 @@
-import { userInfoStyles } from "./UserInfo.styles";
-import numberFormatting from "../../../numberFormatting";
-import defaultAvatar from "../../../assets/images/defaultAvatar.png";
 import {
   Card,
   CardContent,
@@ -14,6 +11,9 @@ import { Grid } from "@material-ui/core";
 import PeopleSharpIcon from "@mui/icons-material/PeopleSharp";
 import VideoCameraFrontIcon from "@mui/icons-material/VideoCameraFront";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { userInfoStyles } from "./UserInfo.styles";
+import numberFormatting from "../../../numberFormatting";
+import defaultAvatar from "../../../assets/images/defaultAvatar.png";
 
 const UserInfo = ({ info, stats }) => {
   const classes = userInfoStyles();
