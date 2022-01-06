@@ -41,7 +41,7 @@ const Header = () => {
         </Box>
         <Link to="/" className={classes.link}>
           <Typography variant="h5">
-            <strong>Tik Tuk</strong>
+            <b>Tik Tuk</b>
           </Typography>
         </Link>
       </CardContent>

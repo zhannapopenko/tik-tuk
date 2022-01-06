@@ -2,7 +2,7 @@ import { Box } from "@mui/system";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CommentIcon from "@mui/icons-material/Comment";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
-import numberFormatting from "../../../numberFormatting";
+import { formatter } from "../../../numberFormatter";
 import { videoSidebarStyles } from "./VideoSidebar.styles";
 
 const VideoSidebar = ({ likes, comments, shareCount }) => {
@@ -12,21 +12,21 @@ const VideoSidebar = ({ likes, comments, shareCount }) => {
     <Box className={classes.mainContainer}>
       <Box className={classes.container}>
         <Box className={classes.iconWrapper}>
-          <FavoriteIcon sx={{ color: "red" }} fontSize="medium" />
+          <FavoriteIcon className={classes.favoriteIcon} fontSize="medium" />
         </Box>
-        <Box className={classes.statistics}>{numberFormatting(likes)}</Box>
+        <Box className={classes.statistics}>{formatter.format(likes)}</Box>
       </Box>
       <Box className={classes.container}>
         <Box className={classes.iconWrapper}>
           <CommentIcon fontSize="medium" />
         </Box>
-        <Box className={classes.statistics}>{numberFormatting(comments)}</Box>
+        <Box className={classes.statistics}>{formatter.format(comments)}</Box>
       </Box>
       <Box className={classes.container}>
         <Box className={classes.iconWrapper}>
           <ReplyOutlinedIcon fontSize="medium" />
         </Box>
-        <Box className={classes.statistics}>{numberFormatting(shareCount)}</Box>
+        <Box className={classes.statistics}>{formatter.format(shareCount)}</Box>
       </Box>
     </Box>
   );

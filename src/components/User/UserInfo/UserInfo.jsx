@@ -12,7 +12,7 @@ import PeopleSharpIcon from "@mui/icons-material/PeopleSharp";
 import VideoCameraFrontIcon from "@mui/icons-material/VideoCameraFront";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { userInfoStyles } from "./UserInfo.styles";
-import numberFormatting from "../../../numberFormatting";
+import { formatter } from "../../../numberFormatter";
 import defaultAvatar from "../../../assets/images/defaultAvatar.png";
 
 const UserInfo = ({ info, stats }) => {
@@ -46,30 +46,30 @@ const UserInfo = ({ info, stats }) => {
             <Grid item xs={6} md={3} lg={6} className={classes.statistics}>
               <Box>
                 <PeopleSharpIcon className={classes.icon} />
-                <strong>Followers: </strong>
+                <b>Followers:&nbsp;</b>
               </Box>
-              {numberFormatting(stats.followerCount)}
+              {formatter.format(stats.followerCount)}
             </Grid>
             <Grid item xs={6} md={3} lg={6} className={classes.statistics}>
               <Box>
                 <PeopleSharpIcon className={classes.icon} />
-                <strong>Following: </strong>
+                <b>Following:&nbsp;</b>
               </Box>
-              {numberFormatting(stats.followingCount)}
+              {formatter.format(stats.followingCount)}
             </Grid>
             <Grid item xs={6} md={3} lg={6} className={classes.statistics}>
               <Box>
                 <VideoCameraFrontIcon className={classes.icon} />
-                <strong>Video: </strong>
+                <b>Video:&nbsp;</b>
               </Box>
-              {numberFormatting(stats.videoCount)}
+              {formatter.format(stats.videoCount)}
             </Grid>
             <Grid item xs={6} md={3} lg={6} className={classes.statistics}>
               <Box>
                 <FavoriteIcon className={classes.icon} />
-                <strong>Like: </strong>
+                <b>Like:&nbsp;</b>
               </Box>
-              {numberFormatting(stats.heartCount)}
+              {formatter.format(stats.heartCount)}
             </Grid>
           </Grid>
         </CardContent>
@@ -79,7 +79,7 @@ const UserInfo = ({ info, stats }) => {
           Videos of {info.nickname}:
         </Typography>
       </Box>
-      <Divider sx={{ marginBottom: "0.5rem" }} />
+      <Divider className={classes.divider} />
     </>
   );
 };

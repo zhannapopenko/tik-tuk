@@ -26,6 +26,9 @@ export const videoSidebarStyles = makeStyles((theme) => ({
     justifyContent: "center",
     width: "100%",
   },
+  favoriteIcon: {
+    color: "red",
+  },
   statistics: {
     display: "flex",
     justifyContent: "center",

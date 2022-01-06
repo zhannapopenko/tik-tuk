@@ -83,4 +83,7 @@ export const userInfoStyles = makeStyles((theme) => ({
       margin: "0.5rem 5%",
     },
   },
+  divider: {
+    marginBottom: "0.5rem",
+  },
 }));
