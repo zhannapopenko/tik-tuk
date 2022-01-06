@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const baseURL = "https://tiktok33.p.rapidapi.com/";
+const baseURL = process.env.REACT_APP_RAPIDAPI_URL;
 
 export default axios.create({
   baseURL: baseURL,
   headers: {
-    "x-rapidapi-host": "tiktok33.p.rapidapi.com",
-    "x-rapidapi-key": "c17160964emsh53c95fe98847290p1030d7jsne22e88c7eb61",
+    "x-rapidapi-host": process.env.REACT_APP_RAPIDAPI_HOST,
+    "x-rapidapi-key": process.env.REACT_APP_RAPIDAPI_KEY,
     "Content-Type": "application/json",
   },
 });
